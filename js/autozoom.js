@@ -84,7 +84,16 @@ let AutoZoom = (function() {
         $(".category-row").eq(5).find(".category-range-selector span").eq(jobChangesIndex).click();
 
         //  10. Type of employment = Skilled Hourly
-        $(".category-row").eq(6).find(".category-range-selector span").eq(1).click();
+        let salary = parseInt(data.type_of_employeement);
+        let empTypeIndex = null;
+        if (salary < 1301) {
+            empTypeIndex = 0;
+        } else if (salary < 2501) {
+            empTypeIndex = 1;
+        } else {
+            empTypeIndex = 2;
+        }
+        $(".category-row").eq(6).find(".category-range-selector span").eq(empTypeIndex).click();
 
         //  11. Skip #9 to #12 on second website
         //  12. Lagniape = Neutral
