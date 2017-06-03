@@ -86,21 +86,6 @@ let AutoZoom = (function() {
         }
         $(".category-row").eq(6).find(".category-range-selector span").eq(empTypeIndex).click();
 
-        //  Salary view
-        let salaryIndex = 0;
-        if (salary < 1350) {
-            salaryIndex = 0;
-        } else if (salary < 1750) {
-            salaryIndex = 1;
-        } else if (salary < 2250) {
-            salaryIndex = 2;
-        } else if (salary < 3551) {
-            salaryIndex = 3;
-        } else {
-            salaryIndex = 4;
-        }
-        $(".category-row").eq(7).find(".category-range-selector span").eq(salaryIndex).click();
-
         //  11. Skip #9 to #12 on second website
         //  12. Lagniape = Neutral
         $(".category-row").eq(12).find(".category-range-selector span").eq(2).click();
