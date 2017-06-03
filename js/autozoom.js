@@ -11,19 +11,10 @@ let AutoZoom = (function() {
             "P": 1,
             "X": 0
         },
+        timer = null,
 		something = null;
 
-	let fill = (data) => {
-        //  1. Copy / Paste First & Last Name
-		$("form input").eq(0).val(data.first_name);
-        $("form input").eq(2).val(data.last_name);
-
-        //  2. Location - Lot 2 Rochester
-        $("form select").eq(1).val(data.location).change();
-
-        //  3. Status: Application
-        $("form select").eq(4).val(data.status).change();
-
+    let selectCategories = (data) => {
         //  4. Residence Stability = Housing Status on 1st website
         $(".category-row").eq(0).find(".category-range-selector span").eq(residence_stability_indice[data.residence_stability]).click();
 
@@ -105,6 +96,25 @@ let AutoZoom = (function() {
         $(".category-row").eq(15).find(".category-range-selector span").eq(0).click();
         $(".category-row").eq(16).find(".category-range-selector span").eq(0).click();
         $(".category-row").eq(17).find(".category-range-selector span").eq(2).click();
+    }
+
+	let fill = (data) => {
+        //  1. Copy / Paste First & Last Name
+		$("form input").eq(0).val(data.first_name);
+        $("form input").eq(2).val(data.last_name);
+
+        //  2. Location - Lot 2 Rochester
+        $("form select").eq(1).val(data.location).change();
+
+        //  3. Status: Application
+        $("form select").eq(4).val(data.status).change();
+
+        timer = setInterval(() => {
+            if ( $(".category-row").length > 0 &&  $(".category-row").eq(17).find(".category-range-selector span").length > 0) {
+                clearInterval(timer);
+                selectCategories(data);
+            }
+        });
 	}
 
 	let init = () => {
