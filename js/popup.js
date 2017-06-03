@@ -24,8 +24,26 @@
 			chrome.tabs.sendMessage(_activeTabId, {
 				from: "popup",
 				action: "capture"
+			}, (response) => {
+				// console.log(response.data);
+				localStorage._data = JSON.stringify(response.data);
 			});
 		});
+		
+		_btnFill.click(() => {
+			if (!JSON.parse(localStorage._data || "null")) {
+				alert("You captured nothing.");
+				return false;
+			} else {
+				chrome.tabs.sendMessage(_activeTabId, {
+					from: "popup",
+					action: "fill",
+					data: JSON.parse(localStorage._data || "{}")
+				}, (response) => {
+					console.log(response);
+				});
+			}
+		})
 	};
 
 	return {
