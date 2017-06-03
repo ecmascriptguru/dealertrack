@@ -8,8 +8,8 @@
 	"version": "0.0.1",
 	
 	"permissions": [
-		"https://www.dealertrack.com/*",
-		"https://app.autozoom.com/*",
+		"*://www.dealertrack.com/*",
+		"*://app.autozoom.com/*",
 		"storage",
 		"tabs"
 	],
@@ -27,7 +27,7 @@
 				"js/dealertrack.js"
 			],
 			"matches": [
-				"https://www.dealertrack.com/*"
+				"*://www.dealertrack.com/*"
 			]
 		},
 		{
@@ -36,7 +36,7 @@
 				"js/autozoom.js"
 			],
 			"matches": [
-				"https://app.autozoom.com/*"
+				"*://app.autozoom.com/*"
 			]
 		}
 	],
