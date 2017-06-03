@@ -27,6 +27,11 @@
 			}, (response) => {
 				// console.log(response.data);
 				localStorage._data = JSON.stringify(response.data);
+				_btnCapture.removeClass("btn-primary").addClass("btn-success").text("Captured!");
+				let tempTimer = setTimeout(() => {
+					_btnCapture.removeClass("btn-success").addClass("btn-primary").text("Capture");
+					clearTimeout(tempTimer);
+				}, 5000);
 			});
 		});
 		
@@ -40,7 +45,12 @@
 					action: "fill",
 					data: JSON.parse(localStorage._data || "{}")
 				}, (response) => {
-					console.log(response);
+					// console.log(response);
+					_btnFill.removeClass("btn-primary").addClass("btn-success").text("Filled out!");
+					let tempTimer = setTimeout(() => {
+						_btnFill.removeClass("btn-success").addClass("btn-primary").text("Fill");
+						clearTimeout(tempTimer);
+					}, 5000);
 				});
 			}
 		})

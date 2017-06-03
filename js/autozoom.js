@@ -129,7 +129,7 @@ let AutoZoom = (function() {
                 clearInterval(timer);
                 selectCategories(data);
             }
-        });
+        }, 1000);
 	}
 
 	let init = () => {

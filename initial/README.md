@@ -1,1 +1,0 @@
-# AutoZoom Chrome Extension
