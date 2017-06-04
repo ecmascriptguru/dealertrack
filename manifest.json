@@ -1,15 +1,14 @@
 {
 	"manifest_version": 2,
 	
-	"name": "AutoZoom",
-	"short_name": "AutoZoom",
-	"description": "AutoZoom",
+	"name": "DealerTrack",
+	"short_name": "DealerTrack",
+	"description": "DealerTrack",
 	"author": "Alexis Richard",
 	"version": "0.0.6",
 	
 	"permissions": [
 		"*://www.dealertrack.com/*",
-		"*://app.autozoom.com/*",
 		"storage",
 		"tabs"
 	],
@@ -28,15 +27,6 @@
 			],
 			"matches": [
 				"*://www.dealertrack.com/*"
-			]
-		},
-		{
-			"js": [
-				"js/jquery.js",
-				"js/autozoom.js"
-			],
-			"matches": [
-				"*://app.autozoom.com/*"
 			]
 		}
 	],
