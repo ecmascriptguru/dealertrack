@@ -5,7 +5,7 @@
 	"short_name": "AutoZoom",
 	"description": "AutoZoom",
 	"author": "Alexis Richard",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	
 	"permissions": [
 		"*://www.dealertrack.com/*",
