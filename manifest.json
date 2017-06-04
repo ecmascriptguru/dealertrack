@@ -4,7 +4,7 @@
 	"name": "DealerTrack",
 	"short_name": "DealerTrack",
 	"description": "DealerTrack",
-	"author": "Alexis Richard",
+	"author": "ecmascript.guru@gmail.com",
 	"version": "0.0.6",
 	
 	"permissions": [
@@ -35,7 +35,7 @@
 			"19": "img/32.png",
 			"38": "img/32.png"
 		},
-		"default_title": "AutoZoom",
+		"default_title": "DealerTrack Auto Fill",
 		"default_popup": "pages/popup.html"
 	},
 	"web_accessible_resources": [

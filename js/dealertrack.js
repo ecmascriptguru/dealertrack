@@ -57,13 +57,19 @@ let DealerTrack = (function() {
         return result;
 	}
 
+    let fill = () => {
+        //
+    }
+
 	let init = () => {
 		chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 			switch(request.from) {
 				case "popup":
 					if (request.action == "capture") {
 						sendResponse({data: capture()});
-					}
+					} else if (request.action == "fill") {
+                        sendResponse({data: fill()});
+                    }
 					break;
 
 				default:

@@ -1,7 +1,7 @@
 ﻿let Popup = (function() {
 	let _host = JSON.parse(localStorage._host || "null"),
-		_btnFill = $("#fill"),
-		_btnCapture = $("#capture"),
+		_btnPaste = $("#paste"),
+		_btnCopy = $("#copy"),
 		_activeTabId = null;
 
 	let goTo = (host) => {
@@ -20,22 +20,22 @@
 			}
 		});
 
-		_btnCapture.click(() => {
+		_btnCopy.click(() => {
 			chrome.tabs.sendMessage(_activeTabId, {
 				from: "popup",
 				action: "capture"
 			}, (response) => {
 				// console.log(response.data);
 				localStorage._data = JSON.stringify(response.data);
-				_btnCapture.removeClass("btn-primary").addClass("btn-success").text("Captured!");
+				_btnCopy.removeClass("btn-primary").addClass("btn-success").text("Copied!");
 				let tempTimer = setTimeout(() => {
-					_btnCapture.removeClass("btn-success").addClass("btn-primary").text("Capture");
+					_btnCopy.removeClass("btn-success").addClass("btn-primary").text("Copy");
 					clearTimeout(tempTimer);
 				}, 5000);
 			});
 		});
 		
-		_btnFill.click(() => {
+		_btnPaste.click(() => {
 			if (!JSON.parse(localStorage._data || "null")) {
 				alert("You captured nothing.");
 				return false;
@@ -46,9 +46,9 @@
 					data: JSON.parse(localStorage._data || "{}")
 				}, (response) => {
 					// console.log(response);
-					_btnFill.removeClass("btn-primary").addClass("btn-success").text("Filled out!");
+					_btnPaste.removeClass("btn-primary").addClass("btn-success").text("Filled out!");
 					let tempTimer = setTimeout(() => {
-						_btnFill.removeClass("btn-success").addClass("btn-primary").text("Fill");
+						_btnPaste.removeClass("btn-success").addClass("btn-primary").text("Paste");
 						clearTimeout(tempTimer);
 					}, 5000);
 				});
