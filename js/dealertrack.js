@@ -1,6 +1,6 @@
 'use strict';
 
-// let env = "dev";
+//let env = "dev";
 let env = "prod";
 
 
@@ -27,6 +27,8 @@ let DealerTrack = (function() {
         };
         let type_of_employeement = doc.getElementById("app_salary").value;
         let lagniappe = "neutral";
+
+		let credit_score = (parseInt(doc.getElementsByName('a_exp_score')[0].value) + parseInt(doc.getElementsByName('a_equ_score')[0].value)) / 2;
         
         let result = {
             first_name,
@@ -38,7 +40,8 @@ let DealerTrack = (function() {
             time_in_area,
             job_stability,
             type_of_employeement,
-            lagniappe
+            lagniappe,
+			credit_score
         };
 
         return result;

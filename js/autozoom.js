@@ -102,6 +102,23 @@ let AutoZoom = (function() {
         $(".category-row").eq(7).find(".category-range-selector span").eq(salaryIndex).click();
 
         //  11. Skip #9 to #12 on second website
+
+        //  12. Credit Score
+        let creditScore = data.credit_score;
+        let creditScoreIndex = null;
+        if (creditScore < 476) {
+            creditScoreIndex = 0;
+        } else if (creditScore < 526) {
+            creditScoreIndex = 1;
+        } else if (creditScore < 601) {
+            creditScoreIndex = 2;
+        } else if (creditScore < 651) {
+            creditScoreIndex = 3;
+        } else {
+            creditScoreIndex = 4;
+        }
+        $(".category-row").eq(11).find(".category-range-selector span").eq(creditScoreIndex).click();
+        
         //  12. Lagniape = Neutral
         $(".category-row").eq(12).find(".category-range-selector span").eq(2).click();
 
