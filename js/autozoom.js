@@ -35,7 +35,10 @@ let AutoZoom = (function() {
         $(".category-row").eq(1).find(".category-range-selector span").eq(resIndex).click();
 
         //  6. Number on Residence changes last 3 years
-        let resChangesIndex = (resMonths > 36) ? 4 : 3;
+        let prevResidenceTime = data.residence_time;
+        let prevResMonths = parseInt(prevResidenceTime.year) * 12 + parseInt(prevResidenceTime.month);
+        let resChangesIndex = (resMonths > 36) ? 4 : ((resMonths + prevResMonths > 36) ? 3 : 2);
+        
         $(".category-row").eq(2).find(".category-range-selector span").eq(resChangesIndex).click();
 
         //  7. Time in area
@@ -71,7 +74,9 @@ let AutoZoom = (function() {
         $(".category-row").eq(4).find(".category-range-selector span").eq(jobStabIndex).click();
 
         //  9. Number of job changes last 2 years
-        let jobChangesIndex = (jobMonths > 24) ? 4 : 3;
+        let prevJobStability = data.prev_job_stability;
+        let prevJobMonths = parseInt(prevJobStability.year) * 12 + parseInt(prevJobStability.month);
+        let jobChangesIndex = (jobMonths > 24) ? 4 : ((jobMonths + prevJobMonths > 36) ? 3 : 2);
         $(".category-row").eq(5).find(".category-range-selector span").eq(jobChangesIndex).click();
 
         //  10. Type of employment = Skilled Hourly
