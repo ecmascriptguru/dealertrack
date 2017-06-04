@@ -33,7 +33,7 @@ let DealerTrack = (function() {
             year: doc.getElementById("app_prv_years_employed").value || 0,
             month: doc.getElementById("app_months_employed").value || 0
         };
-        let type_of_employeement = doc.getElementById("app_salary").value;
+        let type_of_employeement = (doc.getElementById("app_salary").value || 0) + (doc.getElementById("app_other_income").value || 0);
         let lagniappe = "neutral";
 
 		let credit_score = (parseInt(doc.getElementsByName('a_exp_score')[0].value) + parseInt(doc.getElementsByName('a_equ_score')[0].value)) / 2;
