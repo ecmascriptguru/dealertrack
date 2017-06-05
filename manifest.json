@@ -5,7 +5,7 @@
 	"short_name": "DealerTrack",
 	"description": "DealerTrack",
 	"author": "ecmascript.guru@gmail.com",
-	"version": "0.0.6",
+	"version": "0.0.1",
 	
 	"permissions": [
 		"*://www.dealertrack.com/*",
